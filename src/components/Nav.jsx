@@ -19,7 +19,7 @@ export default function Nav() {
     <>
       <nav className={'nav' + (scrolled ? ' scrolled' : '')}>
         <a className="brand" href="#top">
-          <img src={logo} alt="Metalix" className="brand-logo" />
+          <img src={logo} alt="Metalix" className="brand-logo" /> Металикс
         </a>
         <div className="nav-links">
           <a href="#gallery">Зургийн цомог</a>
