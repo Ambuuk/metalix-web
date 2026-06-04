@@ -2,7 +2,7 @@
    METALIX — Design tokens + global styles
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap&subset=cyrillic,cyrillic-ext');
 
 :root {
   --ink:        #08080a;
@@ -40,8 +40,8 @@
   --radius-lg: 5px;
   --maxw: 1280px;
 
-  --font-display: "Oswald", "Arial Narrow", sans-serif;
-  --font-body:    "Hanken Grotesk", system-ui, sans-serif;
+  --font-display: "Exo 2", "Arial Narrow", sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
   --font-mono:    "Space Mono", ui-monospace, monospace;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);

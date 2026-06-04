@@ -22,7 +22,7 @@ export default function Hero() {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <div className="n">100+</div>
+              <div className="n">70+</div>
               <div className="l">жилийн баталгаа</div>
             </div>
             <div className="stat">
