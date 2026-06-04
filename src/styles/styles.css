@@ -1,0 +1,177 @@
+/* ============================================================
+   METALIX — Design tokens + global styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ink:        #08080a;
+  --ink-1:      #0c0c0f;
+  --ink-2:      #131318;
+  --ink-3:      #1b1b21;
+  --ink-4:      #25252d;
+
+  --silver-hi:  #f3f5f8;
+  --silver:     #c5c9d0;
+  --silver-mut: #8a8f99;
+  --steel:      #5d626d;
+  --steel-dim:  #3a3d45;
+
+  --line:       rgba(255,255,255,0.075);
+  --line-2:     rgba(255,255,255,0.13);
+
+  --accent:        #d7dbe2;
+  --accent-deep:   #8d929c;
+  --accent-glow:   rgba(215,219,226,0.35);
+
+  --sheen: linear-gradient(135deg,
+            #f6f8fb 0%,
+            #c2c7cf 18%,
+            #9aa0aa 34%,
+            #e9ecf1 52%,
+            #aeb4be 70%,
+            #d7dbe2 86%,
+            #f1f3f7 100%);
+
+  --sheen-soft: linear-gradient(120deg,
+            #2a2b31 0%, #3a3c44 30%, #26272d 55%, #34353d 80%, #232429 100%);
+
+  --radius:   3px;
+  --radius-lg: 5px;
+  --maxw: 1280px;
+
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body:    "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --pad: clamp(20px, 5vw, 72px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--ink);
+  color: var(--silver);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: #0a0a0c; }
+
+.grain {
+  position: fixed; inset: 0; z-index: 9000; pointer-events: none;
+  opacity: 0.05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette {
+  position: fixed; inset: 0; z-index: 8000; pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(0,0,0,0.55) 100%);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.eyebrow::before {
+  content: ""; width: 26px; height: 1px; background: currentColor; opacity: 0.6;
+}
+.eyebrow.center::after {
+  content: ""; width: 26px; height: 1px; background: currentColor; opacity: 0.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--silver-hi);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.metal-text {
+  background: linear-gradient(105deg, #f4f6f9 0%, #aeb4be 32%, #eef1f4 50%, #9aa0aa 70%, #d7dbe2 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+@keyframes sheenmove {
+  to { background-position: 200% 0; }
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+section { position: relative; }
+.section-pad { padding-block: clamp(80px, 11vw, 160px); }
+
+.gridlines {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(120% 80% at 50% 40%, #000 30%, transparent 80%);
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px; border: 1px solid var(--line-2);
+  color: var(--silver-hi); background: transparent;
+  cursor: pointer; border-radius: var(--radius);
+  position: relative; overflow: hidden;
+  transition: color .4s var(--ease), border-color .4s var(--ease);
+  text-decoration: none;
+}
+.btn .arrow { transition: transform .4s var(--ease); }
+.btn:hover .arrow { transform: translateX(5px); }
+.btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--sheen); transform: translateY(101%);
+  transition: transform .45s var(--ease);
+}
+.btn-primary { color: #0a0a0c; border-color: transparent; }
+.btn-primary::before { transform: translateY(0); }
+.btn-primary:hover { color: #0a0a0c; }
+.btn-primary:hover::before { transform: translateY(0) scale(1.02); filter: brightness(1.08); }
+.btn-ghost:hover { color: #ffd000; border-color: transparent; }
+.btn-ghost:hover::before { transform: translateY(0); }
+
+/* Image placeholder (replaces image-slot web component) */
+.img-placeholder {
+  display: block;
+  background:
+    radial-gradient(140% 120% at 30% 10%, rgba(255,255,255,0.05), transparent 60%),
+    var(--sheen-soft);
+  background-size: cover;
+  border: 1px solid var(--line-2);
+  color: var(--silver-mut);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+}
+@media print {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--ink-4); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--steel-dim); }
