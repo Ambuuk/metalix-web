@@ -15,7 +15,7 @@ export default function Hero() {
             <span className="metal-text">дээр.</span>
           </h1>
           <p className="lead">
-            Хамгийн сүүлийн үеийн технологийг ашиглан чанарын өндөр түвшинд хамгийн сайн металл дээр хэвлэх болно.
+            Хамгийн сүүлийн үеийн технологийг ашиглан чанарын өндөр түвшинд хамгийн сайн металл дээр хэвлэх үйлчилгээ.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#gallery">Зургийн цомог харах <ArrowIcon /></a>
@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
             <div className="stat">
               <div className="n">24</div>
-              <div className="l">Цагийн дотон бэлэн болно</div>
+              <div className="l">Цагийн дотор бэлэн болно</div>
             </div>
           </div>
         </div>
