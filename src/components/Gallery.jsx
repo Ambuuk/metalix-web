@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { ExpandIcon } from '../icons';
 import { PIECES, CATS, SPAN_STYLE } from '../data/content';
+import g1 from '../assets/gallery-1.png';
+import g2 from '../assets/gallery-2.png';
+import g3 from '../assets/gallery-3.png';
+import g4 from '../assets/gallery-4.png';
+import g5 from '../assets/gallery-5.png';
+import g6 from '../assets/gallery-6.png';
+import g7 from '../assets/gallery-7.png';
+
+const GALLERY_IMGS = [g1, g2, g3, g4, g5, g6, g7];
 
 export default function Gallery({ onOpen }) {
   const [cat, setCat] = useState('all');
@@ -29,16 +38,16 @@ export default function Gallery({ onOpen }) {
         </div>
 
         <div className="grid-gallery">
-          {PIECES.map((p) => {
+          {PIECES.map((p, i) => {
             const show = cat === 'all' || p.cat === cat;
             return (
               <div
                 key={p.id}
                 className={'tile' + (show ? '' : ' hide')}
                 style={SPAN_STYLE[p.span]}
-                onClick={() => onOpen(p)}
+                onClick={() => onOpen({ ...p, img: GALLERY_IMGS[i % GALLERY_IMGS.length] })}
               >
-                <div className="tile-img img-placeholder">{p.title}</div>
+                <img className="tile-img" src={GALLERY_IMGS[i % GALLERY_IMGS.length]} alt={p.title} />
                 <div className="sweep"></div>
                 <div className="expand"><ExpandIcon /></div>
                 <div className="meta">

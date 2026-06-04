@@ -1,4 +1,5 @@
 import { ArrowIcon } from '../icons';
+import heroImage from '../assets/hero-image.png';
 
 export default function Hero() {
   return (
@@ -42,7 +43,7 @@ export default function Hero() {
             <span className="corner tr"></span>
             <span className="corner bl"></span>
             <span className="corner br"></span>
-            <div className="plate-img img-placeholder">Жишээ зураг</div>
+            <img className="plate-img" src={heroImage} alt="Металл хэвлэл жишээ" />
             <div className="plate-tag">
               <span className="dot">&#9670;</span> МЕТАЛЛ &middot; 1.15ММ ЗУЗААН &middot; ФОТО ГАДАРГУУ
             </div>

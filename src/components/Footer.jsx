@@ -1,10 +1,12 @@
+import logo from '../assets/logo-no-bg.png';
+
 export default function Footer() {
   return (
     <footer>
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a className="brand" href="#top"><span className="mark"></span>METALIX</a>
+            <a className="brand" href="#top"><img src={logo} alt="Metalix" className="brand-logo" /></a>
             <p>Олон үе дамжин хэрэглэгдэх металл хэвлэлийн үйлчилгээ. Та хүссэн зургаа хэвлүүлээрэй.</p>
           </div>
           <div className="foot-col">

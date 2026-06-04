@@ -1,12 +1,12 @@
 export const PIECES = [
-  { id: "p1", title: "Aurora Drift", cat: "landscape", span: "tall", size: "24″ × 36″", finish: "High-Gloss", edition: "Open" },
-  { id: "p2", title: "Steel Bloom", cat: "abstract", span: "wide", size: "40″ × 30″", finish: "Satin Matte", edition: "Ltd / 50" },
-  { id: "p3", title: "Cobalt Coast", cat: "landscape", span: "std", size: "30″ × 30″", finish: "High-Gloss", edition: "Open" },
-  { id: "p4", title: "Monolith", cat: "portrait", span: "tall", size: "24″ × 36″", finish: "Brushed", edition: "Ltd / 25" },
-  { id: "p5", title: "Liquid Chrome", cat: "abstract", span: "std", size: "30″ × 30″", finish: "High-Gloss", edition: "Open" },
-  { id: "p6", title: "Night Harbor", cat: "landscape", span: "wide", size: "48″ × 32″", finish: "Satin Matte", edition: "Ltd / 50" },
-  { id: "p7", title: "Ember Field", cat: "abstract", span: "std", size: "30″ × 40″", finish: "High-Gloss", edition: "Open" },
-  { id: "p8", title: "Glass Veil", cat: "portrait", span: "tall", size: "24″ × 36″", finish: "Brushed", edition: "Ltd / 25" },
+  { id: "p1", title: "Мотоциклтой хөрөг", cat: "landscape", span: "tall", size: "A3", finish: "High-Gloss", edition: "Open" },
+  { id: "p2", title: "Хүрхээ", cat: "abstract", span: "wide", size: "A3", finish: "Satin Matte", edition: "Ltd / 50" },
+  { id: "p3", title: "ZeroTwo", cat: "landscape", span: "std", size: "A3", finish: "High-Gloss", edition: "Open" },
+  { id: "p4", title: "Хуримын зураг", cat: "portrait", span: "tall", size: "A2", finish: "Brushed", edition: "Ltd / 25" },
+  { id: "p5", title: "Сагсан бөмбөг", cat: "abstract", span: "std", size: "A3", finish: "High-Gloss", edition: "Open" },
+  { id: "p6", title: "Анимэ дүр", cat: "landscape", span: "wide", size: "A4", finish: "Satin Matte", edition: "Ltd / 50" },
+  { id: "p7", title: "Киноны постер", cat: "abstract", span: "std", size: "A3", finish: "High-Gloss", edition: "Open" },
+  // { id: "p8", title: "Glass Veil", cat: "portrait", span: "tall", size: "A3", finish: "Brushed", edition: "Ltd / 25" },
 ];
 
 export const CATS = [

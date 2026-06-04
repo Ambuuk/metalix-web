@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowIcon } from '../icons';
+import logo from '../assets/logo-no-bg.png';
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +19,7 @@ export default function Nav() {
     <>
       <nav className={'nav' + (scrolled ? ' scrolled' : '')}>
         <a className="brand" href="#top">
-          <span className="mark"></span>METALIX
+          <img src={logo} alt="Metalix" className="brand-logo" />
         </a>
         <div className="nav-links">
           <a href="#gallery">Зургийн цомог</a>
